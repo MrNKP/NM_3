@@ -43,13 +43,20 @@ public class RungeMethodMainPart extends RungeMethod {
     private double[] formula(double x, double y, double v, double h){
         double k1 = h * f1(x, y, v);
         double l1 = h * f2(x, y, v);
-        double k2 = h * f1(x + (1/3) * h, y + (1/3) * k1, v + (1/3) * l1);
-        double l2 = h * f2(x + (1/3) * h, y + (1/3) * k1, v + (1/3) * l1);
-        double k3 = h * f1(x + (2/3) * h, y + (2/3) * k2, v + (2/3) * l2);
-        double l3 = h * f2(x + (2/3) * h, y + (2/3) * k2, v + (2/3) * l2);
 
-        double resultY = y + (1/4) * (k1 + 3 * k3);
-        double resultV = v + (1/4) * (l1 + 3 * l3);
+        double k2 = h * f1(x + (1.0/3.0) * h, y + (1.0/3.0) * k1, v + (1.0/3.0) * l1);
+        double l2 = h * f2(x + (1.0/3.0) * h, y + (1.0/3.0) * k1, v + (1.0/3.0) * l1);
+        double k3 = h * f1(x + (2.0/3.0) * h, y + (2.0/3.0) * k2, v + (2.0/3.0) * l2);
+        double l3 = h * f2(x + (2.0/3.0) * h, y + (2.0/3.0) * k2, v + (2.0/3.0) * l2);
+
+        /*
+        double k2 = h * f1(x + 0.5 * h, y + 0.5 * k1, v + 0.5 * l1);
+        double l2 = h * f2(x + 0.5 * h, y + 0.5 * k1, v + 0.5 * l1);
+*/
+        //double resultY = y + k2;
+        double resultY = y + (1.0/4.0) * (k1 + 3 * k3);
+        //double resultV = v + l2;
+        double resultV = v + (1.0/4.0) * (l1 + 3 * l3);
 
         double[] points = new double[]{0, resultY, resultV, 0, 0};
         return points;

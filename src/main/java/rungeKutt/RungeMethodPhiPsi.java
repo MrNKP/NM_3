@@ -54,15 +54,17 @@ public class RungeMethodPhiPsi extends RungeMethod {
     }
 
     private double formulaPhi(double x, double y, double h){
-        /*
+/*
         double k1 = h * fPhi(x, y);
         double k2 = h * fPhi(x + 0.5 * h, y + 0.5 * k1);
         double result = y + k2;
-        */
+*/
+
         double k1 = h * fPhi(x, y);
-        double k2 = h * fPhi(x + (1/3) * h, y + (1/3) * k1);
-        double k3 = h * fPhi(x + (2/3) * h, y + (2/3) * k2);
-        double result = y + (1/4) * (k1 + 3 * k3);
+        double k2 = h * fPhi(x + (1.0/3.0) * h, y + (1.0/3.0) * k1);
+        double k3 = h * fPhi(x + (2.0/3.0) * h, y + (2.0/3.0) * k2);
+        double result = y + (1.0/4.0) * (k1 + 3 * k3);
+
         return result;
     }
 
@@ -76,15 +78,17 @@ public class RungeMethodPhiPsi extends RungeMethod {
     }
 
     private double formulaPsi(double x, double y, double phi, double h){
-        /*
+/*
         double k1 = h * fPsi(x, y, phi);
         double k2 = h * fPsi(x + 0.5 * h, y + 0.5 * k1, phi);
         double result = y + k2;
-        */
+*/
+
         double k1 = h * fPsi(x, y, phi);
-        double k2 = h * fPsi(x + (1/3) * h, y + (1/3) * k1, phi);
-        double k3 = h * fPsi(x + (2/3) * h, y + (2/3) * k2, phi);
-        double result = y + (1/4) * (k1 + 3 * k3);
+        double k2 = h * fPsi(x + (1.0/3.0) * h, y + (1.0/3.0) * k1, phi);
+        double k3 = h * fPsi(x + (2.0/3.0) * h, y + (2.0/3.0) * k2, phi);
+        double result = y + (1.0/4.0) * (k1 + 3 * k3);
+
         return result;
     }
 }

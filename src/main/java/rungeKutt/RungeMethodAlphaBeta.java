@@ -55,15 +55,17 @@ public class RungeMethodAlphaBeta extends RungeMethod {
     }
 
     private double formulaAlpha(double x, double y, double h){
-        /*
+/*
         double k1 = h * fA(x, y);
         double k2 = h * fA(x + 0.5 * h, y + 0.5 * k1);
         double result = y + k2;
-        */
+*/
+
         double k1 = h * fA(x, y);
-        double k2 = h * fA(x + (1/3)*h, y + (1/3)*k1);
-        double k3 = h * fA(x + (2/3)*h, y + (2/3)*k2);
-        double result = y + (1/4) * (k1 + 3 * k3);
+        double k2 = h * fA(x + (1.0/3.0)*h, y + (1.0/3.0)*k1);
+        double k3 = h * fA(x + (2.0/3.0)*h, y + (2.0/3.0)*k2);
+        double result = y + (1.0/4.0) * (k1 + 3 * k3);
+
         return result;
     }
 
@@ -80,11 +82,13 @@ public class RungeMethodAlphaBeta extends RungeMethod {
         double k1 = h * fB(x, y, alpha);
         double k2 = h * fB(x + 0.5 * h, y + 0.5 * k1, alpha);
         double result = y + k2;
-        */
+*/
+
         double k1 = h * fB(x, y, alpha);
-        double k2 = h * fB(x + (1/3)*h, y + (1/3)*k1, alpha);
-        double k3 = h * fB(x + (2/3)*h, y + (2/3)*k2, alpha);
-        double result = y + (1/4) * (k1 + 3 * k3);
+        double k2 = h * fB(x + (1.0/3.0)*h, y + (1.0/3.0)*k1, alpha);
+        double k3 = h * fB(x + (2.0/3.0)*h, y + (2.0/3.0)*k2, alpha);
+        double result = y + (1.0/4.0) * (k1 + 3 * k3);
+
         return result;
     }
 }

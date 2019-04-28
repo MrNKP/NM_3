@@ -229,10 +229,12 @@ public class DiffSweep {
     private boolean isHasSolution(double delta) {
         if (delta == 0) {
             // смотрим что к чему
-            if (yDiffInA != 0 & yInA != 0)
+            if (yDiffInA != 0 & yInA != 0) {
                 System.out.println("Пустое мн-во");
-            else if (yDiffInA == 0 & yInA == 0)
+            }
+            else if (yDiffInA == 0 & yInA == 0) {
                 System.out.println("Бесчисленное мн-во решений");
+            }
             return false;
         } else {
             // иначе единственное решение
