@@ -113,7 +113,7 @@ public class DiffSweep {
      */
     private double[] transferEdgeConditionAlpha(){
         DataForMethod dataForMethod = new DataForMethod(data.getA(), data.getB(),
-                data.getAlpha(), data.getBeta(), data.getN()*1000,
+                data.getAlpha(), data.getBeta(), data.getN()*50000, //TUT
                 false, funcs);
 
         RungeMethodAlphaBeta rungeMethodAlphaBeta = new RungeMethodAlphaBeta(dataForMethod, gammaEdgeCondTwo);
@@ -130,7 +130,7 @@ public class DiffSweep {
      */
     private double[] transferEdgeConditionBeta(){
         DataForMethod dataForMethod = new DataForMethod(data.getA(), data.getB(),
-                data.getAlpha(), data.getBeta(), data.getN()*10000,
+                data.getAlpha(), data.getBeta(), data.getN()*500000, //TUT
                 false, funcs);
 
         RungeMethodPhiPsi rungeMethodPhiPsi = new RungeMethodPhiPsi(dataForMethod, gammaEdgeCondTwo);
